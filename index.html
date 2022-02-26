@@ -14,7 +14,6 @@
 
     <title>Frontend Mentor | Tip calculator app</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
         font-size: 11px;
@@ -27,15 +26,70 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
-    person Total / person Reset
+    <div class="main-container">
+      <header>
+        <h1 class="header-title">Splitter</h1>
+      </header>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      <main>
+        <div class="input-form card">
+          <div class="input-form-bill">
+            <label for="bill">Bill</label>
+            <input type="number" name="bill" id="bill" />
+          </div>
+
+          <div class="input-form-tip">
+            <label>Select Tip %</label>
+            <input type="button" value="5%" />
+            <input type="button" value="10%" />
+            <input type="button" value="15%" />
+            <input type="button" value="25%" />
+            <input type="button" value="50%" />
+            <input
+              type="number"
+              name="custom"
+              id="custom"
+              placeholder="custom"
+            />
+          </div>
+
+          <div class="input-form-people">
+            <label for="people">Number of People</label>
+            <input type="number" name="people" id="people" />
+          </div>
+        </div>
+
+        <div class="result card">
+          <div class="result-amount">
+            <div class="result-label">
+              <p>Tip Amount</p>
+              <p>/person</p>
+            </div>
+            <div class="result-value" id="tip">$4.7</div>
+          </div>
+
+          <div class="result-total">
+            <div class="result-label">
+              <p>Total</p>
+              <p>/person</p>
+            </div>
+            <div class="result-value" id="total">$32.7</div>
+          </div>
+
+          <button class="btn btn-primary" id="reset">Reset</button>
+        </div>
+      </main>
+
+      <footer>
+        <div class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="#">Your Name Here</a>.
+        </div>
+      </footer>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
