@@ -31,10 +31,11 @@ tipParentEl.addEventListener('click', (e) => {
   }
 })
 
-customTipEl.addEventListener(
-  'change',
-  (e) => (tipPercentage = parseInt(e.target.value))
-)
+customTipEl.addEventListener('change', (e) => {
+  tipPercentage = parseInt(e.target.value)
+
+  calculateSplit()
+})
 
 resetBtn.addEventListener('click', resetApp)
 
@@ -65,6 +66,8 @@ function menageClasses() {
 function showResults(tip, split) {
   tipAmountEl.innerText = '$' + tip.toFixed(2)
   totalEl.innerText = '$' + split.toFixed(2)
+
+  resetBtn.disabled = false
 }
 
 function resetApp() {
@@ -83,6 +86,7 @@ function resetApp() {
   removeTipActiveClass()
 
   resetBtn.classList.add('disabled')
+  resetBtn.disabled = true
   peopleEl.classList.remove('error')
 }
 
