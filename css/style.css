@@ -121,11 +121,6 @@ header {
   margin: 0 0 15px;
 }
 
-.result {
-  margin-top: -40px;
-  background-color: #00494d;
-}
-
 .result-amount, .result-total {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,17 +134,76 @@ header {
   margin-bottom: 35px;
 }
 
+@media (min-width: 900px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+  }
+  .main-container {
+    position: relative;
+    max-width: 920px;
+  }
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .card {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .input-form-people {
+    margin-bottom: 0;
+  }
+  .result {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-width: 415px;
+    margin: 0;
+  }
+  .result-amount, .result-total {
+    margin: 15px 0 50px;
+  }
+  .result button {
+    margin-top: auto;
+  }
+  footer {
+    position: absolute;
+    bottom: -25px;
+  }
+}
+
 /*
 // COMPONENTS
 // ==========
 */
-.card {
+.main-container {
+  background-color: white;
+}
+
+.card,
+.main-container {
   border-radius: 15px;
+}
+
+.card {
   padding: 35px 30px;
 }
 
 .card.result {
   padding: 45px 25px 25px;
+  background-color: #00494d;
 }
 
 header {
@@ -260,4 +314,19 @@ input[type='number']:focus {
 .btn-primary:active {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+}
+
+@media (min-width: 900px) {
+  .main-container {
+    padding: 30px;
+  }
+  .card {
+    padding: 20px;
+  }
+  .input-form {
+    padding-right: 50px;
+  }
+  .input-form-tip input.btn {
+    width: 115px;
+  }
 }

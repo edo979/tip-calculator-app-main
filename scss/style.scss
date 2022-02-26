@@ -17,6 +17,8 @@ $Light-grayish-cyan-1: hsl(185, 41%, 84%);
 $Light-grayish-cyan-2: hsl(189, 41%, 97%);
 $White: hsl(0, 0%, 100%);
 
+$break-point: 900px;
+
 /*
 // IMPORTS
 // =======
@@ -135,9 +137,6 @@ header {
 }
 
 .result {
-  margin-top: -40px;
-  background-color: $Very-dark-cyan;
-
   &-amount,
   &-total {
     display: flex;
@@ -147,16 +146,71 @@ header {
   }
 }
 
+@media (min-width: $break-point) {
+  body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+  }
+
+  .main-container {
+    position: relative;
+    max-width: 920px;
+  }
+  main {
+    display: flex;
+  }
+
+  .card {
+    flex: 1;
+  }
+
+  .input-form-people {
+    margin-bottom: 0;
+  }
+
+  .result {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 415px;
+    margin: 0;
+
+    &-amount,
+    &-total {
+      margin: 15px 0 50px;
+    }
+
+    button {
+      margin-top: auto;
+    }
+  }
+
+  footer {
+    position: absolute;
+    bottom: -25px;
+  }
+}
+
 /*
 // COMPONENTS
 // ==========
 */
-.card {
+.main-container {
+  background-color: $White;
+}
+
+.card,
+.main-container {
   border-radius: 15px;
+}
+
+.card {
   padding: 35px 30px;
 
   &.result {
     padding: 45px 25px 25px;
+    background-color: $Very-dark-cyan;
   }
 }
 
@@ -265,5 +319,24 @@ input[type='number'] {
 
   &:active {
     transform: scale(0.95);
+  }
+}
+
+@media (min-width: $break-point) {
+  .main-container {
+    padding: 30px;
+  }
+  .card {
+    padding: 20px;
+  }
+
+  .input-form {
+    padding-right: 50px;
+  }
+
+  .input-form-tip {
+    input.btn {
+      width: 115px;
+    }
   }
 }
