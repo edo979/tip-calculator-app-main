@@ -6,6 +6,7 @@
 // IMPORTS
 // =======
 */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 /*
 // RESET
 // =====
@@ -21,15 +22,141 @@
 // TYPOGRAPHY
 // ==========
 */
+html {
+  font-size: 24px;
+}
+
 body {
-  font-family: sans-serif;
+  font-family: 'Space Mono', monospace;
+}
+
+.header-title {
+  font-size: clamp(0.9rem, 1rem, 1.2rem);
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: #00494d;
+}
+
+label {
+  color: #5e7a7d;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+input {
+  text-align: right;
+  font-family: inherit;
+  font-size: inherit;
+  font-size: clamp(0.8rem, 1rem, 1.1rem);
+  font-weight: 700;
+  color: #00494d;
 }
 
 /*
 // LAYOUT
 // ======
 */
+body {
+  background-color: #c5e4e7;
+}
+
+.header-title {
+  margin: 50px auto 40px;
+}
+
+.input-form {
+  background-color: white;
+}
+
+.input-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-form input[type='number'] {
+  width: 100%;
+}
+
+.input-form-bill, .input-form-tip, .input-form-people {
+  margin-bottom: 40px;
+}
+
+.input-form-tip {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.input-form-tip label {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input-form-tip input {
+  margin: 0 0 15px;
+}
+
+.result {
+  margin-top: -40px;
+  background-color: #00494d;
+}
+
 /*
 // COMPONENTS
 // ==========
 */
+.card {
+  border-radius: 15px;
+  padding: 35px 30px;
+}
+
+header {
+  text-align: center;
+}
+
+.header-title span {
+  display: block;
+}
+
+input[type='number'] {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f4fafa;
+}
+
+input[type='number']:focus {
+  outline: 1px solid #26c0ab;
+}
+
+.input-form-tip input.btn {
+  padding: 5px 15px;
+  border: 0;
+  border-radius: 5px;
+  width: 145px;
+  text-align: center;
+  color: white;
+  background-color: #00494d;
+}
+
+.input-form-tip input.btn:hover {
+  background-color: #c5e4e7;
+  color: #00494d;
+}
+
+.input-form-tip input.btn.active {
+  background-color: #26c0ab;
+  color: #00494d;
+}
+
+.input-form-tip input.btn#custom {
+  text-align: right;
+  padding: 5px;
+  background-color: #f4fafa;
+  color: #00494d;
+}

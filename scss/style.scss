@@ -2,11 +2,26 @@
 // COLORS, VARIABLES
 // ======
 */
+//## Colors
+
+//### Primary
+
+$Strong-cyan: hsl(172, 67%, 45%);
+
+//### Neutral
+
+$Very-dark-cyan: hsl(183, 100%, 15%);
+$Dark-grayish-cyan-1: hsl(186, 14%, 43%);
+$Dark-grayish-cyan-2: hsl(184, 14%, 56%);
+$Light-grayish-cyan-1: hsl(185, 41%, 84%);
+$Light-grayish-cyan-2: hsl(189, 41%, 97%);
+$White: hsl(0, 0%, 100%);
 
 /*
 // IMPORTS
 // =======
 */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 /*
 // RESET
@@ -24,16 +39,140 @@
 // ==========
 */
 
+html {
+  font-size: 24px;
+}
+
 body {
-  font-family: sans-serif;
+  font-family: 'Space Mono', monospace;
+}
+
+.header-title {
+  font-size: clamp(0.9rem, 1rem, 1.2rem);
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: $Very-dark-cyan;
+}
+
+label {
+  color: $Dark-grayish-cyan-1;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+input {
+  text-align: right;
+  font-family: inherit;
+  font-size: inherit;
+  font-size: clamp(0.8rem, 1rem, 1.1rem);
+  font-weight: 700;
+  color: $Very-dark-cyan;
 }
 
 /*
 // LAYOUT
 // ======
 */
+body {
+  background-color: $Light-grayish-cyan-1;
+}
+
+.header-title {
+  margin: 50px auto 40px;
+}
+
+.input-form {
+  background-color: $White;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input[type='number'] {
+    width: 100%;
+  }
+
+  &-bill,
+  &-tip,
+  &-people {
+    margin-bottom: 40px;
+  }
+
+  &-tip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    label {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    input {
+      margin: 0 0 15px;
+    }
+  }
+}
+
+.result {
+  margin-top: -40px;
+  background-color: $Very-dark-cyan;
+}
 
 /*
 // COMPONENTS
 // ==========
 */
+.card {
+  border-radius: 15px;
+  padding: 35px 30px;
+}
+
+header {
+  text-align: center;
+}
+.header-title {
+  span {
+    display: block;
+  }
+}
+
+input[type='number'] {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: $Light-grayish-cyan-2;
+
+  &:focus {
+    outline: 1px solid $Strong-cyan;
+  }
+}
+
+.input-form-tip {
+  input.btn {
+    padding: 5px 15px;
+    border: 0;
+    border-radius: 5px;
+    width: 145px;
+    text-align: center;
+    color: $White;
+    background-color: $Very-dark-cyan;
+
+    &:hover {
+      background-color: $Light-grayish-cyan-1;
+      color: $Very-dark-cyan;
+    }
+
+    &.active {
+      background-color: $Strong-cyan;
+      color: $Very-dark-cyan;
+    }
+
+    &#custom {
+      text-align: right;
+      padding: 5px;
+      background-color: $Light-grayish-cyan-2;
+      color: $Very-dark-cyan;
+    }
+  }
+}
