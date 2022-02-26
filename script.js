@@ -10,7 +10,9 @@ let bill = 0,
   tipPercentage = 0,
   people = 0
 
+// Event Listeners
 billEl.addEventListener('change', (e) => (bill = parseFloat(e.target.value)))
+
 peopleEl.addEventListener('change', (e) => {
   people = parseInt(e.target.value)
 
@@ -36,13 +38,18 @@ customTipEl.addEventListener(
 
 resetBtn.addEventListener('click', resetApp)
 
+// App implementation
 function calculateSplit() {
   menageClasses()
 
   const tip = bill * (tipPercentage / 100)
   const split = (bill + tip) / people
 
-  showResults(tip, split)
+  if (people === 0) {
+    showResults(0, 0)
+  } else {
+    showResults(tip, split)
+  }
 }
 
 function menageClasses() {
@@ -56,8 +63,8 @@ function menageClasses() {
 }
 
 function showResults(tip, split) {
-  tipAmountEl.innerText = tip.toFixed(2)
-  totalEl.innerText = split.toFixed(2)
+  tipAmountEl.innerText = '$' + tip.toFixed(2)
+  totalEl.innerText = '$' + split.toFixed(2)
 }
 
 function resetApp() {
@@ -76,6 +83,7 @@ function resetApp() {
   removeTipActiveClass()
 
   resetBtn.classList.add('disabled')
+  peopleEl.classList.remove('error')
 }
 
 function removeTipActiveClass() {
