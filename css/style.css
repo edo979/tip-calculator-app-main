@@ -38,7 +38,8 @@ body {
 }
 
 label,
-.result-label {
+.result-label,
+input.error + p {
   font-weight: 700;
   font-size: 0.7rem;
 }
@@ -55,6 +56,10 @@ input,
   font-size: 1rem;
   font-weight: 700;
   color: #00494d;
+}
+
+input.error + p {
+  color: indianred;
 }
 
 .result-label p:first-child {
@@ -119,6 +124,17 @@ header {
 
 .input-form-tip input {
   margin: 0 0 15px;
+}
+
+.input-form-people input + p {
+  display: none;
+}
+
+.input-form-people input.error + p {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -30px;
 }
 
 .result-amount, .result-total {
@@ -259,6 +275,10 @@ input[type='number']:focus {
 
 .input-form-people .input-field::before {
   background-image: url("../images/icon-person.svg");
+}
+
+.input-form-people input.error {
+  border: 1px solid indianred;
 }
 
 .input-form-tip input.btn {

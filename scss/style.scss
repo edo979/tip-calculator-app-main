@@ -57,7 +57,8 @@ body {
 }
 
 label,
-.result-label {
+.result-label,
+input.error + p {
   font-weight: 700;
   font-size: 0.7rem;
 }
@@ -73,6 +74,10 @@ input,
   font-size: 1rem;
   font-weight: 700;
   color: $Very-dark-cyan;
+}
+
+input.error + p {
+  color: indianred;
 }
 
 .result-label {
@@ -132,6 +137,19 @@ header {
 
     input {
       margin: 0 0 15px;
+    }
+  }
+
+  &-people {
+    input + p {
+      display: none;
+    }
+
+    input.error + p {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: -30px;
     }
   }
 }
@@ -262,6 +280,10 @@ input[type='number'] {
     &::before {
       background-image: url('../images/icon-person.svg');
     }
+  }
+
+  input.error {
+    border: 1px solid indianred;
   }
 }
 
