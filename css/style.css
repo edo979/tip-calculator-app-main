@@ -37,19 +37,39 @@ body {
   color: #00494d;
 }
 
-label {
-  color: #5e7a7d;
+label,
+.result-label {
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
-input {
+label {
+  color: #5e7a7d;
+}
+
+input,
+.btn {
   text-align: right;
   font-family: inherit;
   font-size: inherit;
-  font-size: clamp(0.8rem, 1rem, 1.1rem);
+  font-size: 1rem;
   font-weight: 700;
   color: #00494d;
+}
+
+.result-label p:first-child {
+  color: white;
+}
+
+.result-label p:last-child {
+  color: #7f9c9f;
+  font-size: 0.65rem;
+}
+
+.result-value {
+  font-size: clamp(1rem, 1.5rem, 2rem);
+  font-weight: 700;
+  color: #26c0ab;
 }
 
 /*
@@ -106,6 +126,19 @@ body {
   background-color: #00494d;
 }
 
+.result-amount, .result-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 35px;
+}
+
 /*
 // COMPONENTS
 // ==========
@@ -113,6 +146,10 @@ body {
 .card {
   border-radius: 15px;
   padding: 35px 30px;
+}
+
+.card.result {
+  padding: 45px 25px 25px;
 }
 
 header {
@@ -135,11 +172,7 @@ input[type='number']:focus {
 }
 
 .input-form-tip input.btn {
-  padding: 5px 15px;
-  border: 0;
-  border-radius: 5px;
   width: 145px;
-  text-align: center;
   color: white;
   background-color: #00494d;
 }
@@ -159,4 +192,30 @@ input[type='number']:focus {
   padding: 5px;
   background-color: #f4fafa;
   color: #00494d;
+}
+
+.btn {
+  padding: 5px 15px;
+  border: 0;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: #26c0ab;
+}
+
+.btn-primary:hover {
+  background-color: #c5e4e7;
+}
+
+.btn-primary.disabled {
+  opacity: 0.3;
+  cursor: auto;
+}
+
+.btn-primary.disabled:hover {
+  background-color: #26c0ab;
 }

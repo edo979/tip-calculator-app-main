@@ -54,19 +54,39 @@ body {
   color: $Very-dark-cyan;
 }
 
+label,
+.result-label {
+  font-weight: 700;
+  font-size: 0.7rem;
+}
 label {
   color: $Dark-grayish-cyan-1;
-  font-weight: 700;
-  font-size: 0.8rem;
 }
 
-input {
+input,
+.btn {
   text-align: right;
   font-family: inherit;
   font-size: inherit;
-  font-size: clamp(0.8rem, 1rem, 1.1rem);
+  font-size: 1rem;
   font-weight: 700;
   color: $Very-dark-cyan;
+}
+
+.result-label {
+  p:first-child {
+    color: $White;
+  }
+  p:last-child {
+    color: $Dark-grayish-cyan-2;
+    font-size: 0.65rem;
+  }
+}
+
+.result-value {
+  font-size: clamp(1rem, 1.5rem, 2rem);
+  font-weight: 700;
+  color: $Strong-cyan;
 }
 
 /*
@@ -117,6 +137,14 @@ body {
 .result {
   margin-top: -40px;
   background-color: $Very-dark-cyan;
+
+  &-amount,
+  &-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+  }
 }
 
 /*
@@ -126,6 +154,10 @@ body {
 .card {
   border-radius: 15px;
   padding: 35px 30px;
+
+  &.result {
+    padding: 45px 25px 25px;
+  }
 }
 
 header {
@@ -150,11 +182,7 @@ input[type='number'] {
 
 .input-form-tip {
   input.btn {
-    padding: 5px 15px;
-    border: 0;
-    border-radius: 5px;
     width: 145px;
-    text-align: center;
     color: $White;
     background-color: $Very-dark-cyan;
 
@@ -173,6 +201,32 @@ input[type='number'] {
       padding: 5px;
       background-color: $Light-grayish-cyan-2;
       color: $Very-dark-cyan;
+    }
+  }
+}
+
+.btn {
+  padding: 5px 15px;
+  border: 0;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: $Strong-cyan;
+
+  &:hover {
+    background-color: $Light-grayish-cyan-1;
+  }
+
+  &.disabled {
+    opacity: 0.3;
+    cursor: auto;
+
+    &:hover {
+      background-color: $Strong-cyan;
     }
   }
 }
