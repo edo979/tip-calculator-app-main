@@ -97,7 +97,7 @@ body {
   background-color: $Light-grayish-cyan-1;
 }
 
-.header-title {
+header {
   margin: 50px auto 40px;
 }
 
@@ -163,11 +163,6 @@ body {
 header {
   text-align: center;
 }
-.header-title {
-  span {
-    display: block;
-  }
-}
 
 input[type='number'] {
   padding: 5px;
@@ -180,15 +175,53 @@ input[type='number'] {
   }
 }
 
+.input-field {
+  position: relative;
+
+  input {
+    &::placeholder {
+      color: $Light-grayish-cyan-1;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 15px;
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+.input-form-bill {
+  .input-field {
+    &::before {
+      background-image: url('../images/icon-dollar.svg');
+    }
+  }
+}
+.input-form-people {
+  .input-field {
+    &::before {
+      background-image: url('../images/icon-person.svg');
+    }
+  }
+}
+
 .input-form-tip {
   input.btn {
     width: 145px;
     color: $White;
     background-color: $Very-dark-cyan;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $Light-grayish-cyan-1;
       color: $Very-dark-cyan;
+      outline: none;
     }
 
     &.active {
@@ -228,5 +261,9 @@ input[type='number'] {
     &:hover {
       background-color: $Strong-cyan;
     }
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 }

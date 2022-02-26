@@ -28,14 +28,16 @@
   <body>
     <div class="main-container">
       <header>
-        <h1 class="header-title">Spli<span>tter</span></h1>
+        <img src="images/logo.svg" alt="splitter" />
       </header>
 
       <main>
         <div class="input-form card">
           <div class="input-form-bill">
             <label for="bill">Bill</label>
-            <input type="number" name="bill" id="bill" />
+            <div class="input-field">
+              <input type="number" name="bill" id="bill" placeholder="0" />
+            </div>
           </div>
 
           <div class="input-form-tip">
@@ -56,7 +58,9 @@
 
           <div class="input-form-people">
             <label for="people">Number of People</label>
-            <input type="number" name="people" id="people" />
+            <div class="input-field">
+              <input type="number" name="people" id="people" placeholder="0" />
+            </div>
           </div>
         </div>
 
@@ -77,7 +81,7 @@
             <div class="result-value" id="total">$32.7</div>
           </div>
 
-          <button type="button" class="btn btn-primary disabled" id="reset">
+          <button type="button" class="btn btn-primary" id="reset">
             Reset
           </button>
         </div>

@@ -80,7 +80,7 @@ body {
   background-color: #c5e4e7;
 }
 
-.header-title {
+header {
   margin: 50px auto 40px;
 }
 
@@ -156,10 +156,6 @@ header {
   text-align: center;
 }
 
-.header-title span {
-  display: block;
-}
-
 input[type='number'] {
   padding: 5px;
   border: none;
@@ -171,15 +167,56 @@ input[type='number']:focus {
   outline: 1px solid #26c0ab;
 }
 
+.input-field {
+  position: relative;
+}
+
+.input-field input::-webkit-input-placeholder {
+  color: #c5e4e7;
+}
+
+.input-field input:-ms-input-placeholder {
+  color: #c5e4e7;
+}
+
+.input-field input::-ms-input-placeholder {
+  color: #c5e4e7;
+}
+
+.input-field input::placeholder {
+  color: #c5e4e7;
+}
+
+.input-field::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 15px;
+  height: 20px;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.input-form-bill .input-field::before {
+  background-image: url("../images/icon-dollar.svg");
+}
+
+.input-form-people .input-field::before {
+  background-image: url("../images/icon-person.svg");
+}
+
 .input-form-tip input.btn {
   width: 145px;
   color: white;
   background-color: #00494d;
 }
 
-.input-form-tip input.btn:hover {
+.input-form-tip input.btn:hover, .input-form-tip input.btn:focus {
   background-color: #c5e4e7;
   color: #00494d;
+  outline: none;
 }
 
 .input-form-tip input.btn.active {
@@ -218,4 +255,9 @@ input[type='number']:focus {
 
 .btn-primary.disabled:hover {
   background-color: #26c0ab;
+}
+
+.btn-primary:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
